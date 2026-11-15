@@ -4,7 +4,7 @@
 # @GitHub  : https://github.com/lartpang
 
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "3"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 import cv2
 from tqdm import tqdm
@@ -13,7 +13,7 @@ from tqdm import tqdm
 from py_sod_metrics import MAE, Emeasure, Fmeasure, Smeasure, WeightedFmeasure
 
 method='BGNet'
-for _data_name in ['CAMO','CHAMELEON','COD10K','NC4K']:
+for _data_name in ['MCS1K']:
     mask_root = './data/TestDataset/{}/GT'.format(_data_name)
     pred_root = './results/{}/{}/'.format(method, _data_name)
     mask_name_list = sorted(os.listdir(mask_root))
