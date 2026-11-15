@@ -110,6 +110,7 @@ if __name__ == '__main__':
 
     # ---- build models ----
     model = Net().cuda()
+    model.load_state_dict(torch.load("./checkpoints/BGNet.pth"))
 
     params = model.parameters()
     optimizer = torch.optim.Adam(params, opt.lr)
